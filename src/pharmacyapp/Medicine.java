@@ -87,10 +87,10 @@ public class Medicine {
 
     @Override
     public String toString() {
-        return String.format("\nBrand Name: %s\nGeneric Name: %s\nPrice: %d\nType: %s\nExpiration Date: %s\n",brandName,genericName,price,type,expirationDate);
+        return String.format("\nBrand Name: %s\nGeneric Name: %s\nPrice: %d\nType: %s\nExpiration Date: %s\nQuantity: %d\n",brandName,genericName,price,type,expirationDate,quantity);
     }
     
     public String displayInventory(){
-        return String.format("Brand Name: %s\nGeneric Name: %s\nType: S\nQuantity: %d",brandName,genericName,type,quantity);
+        return String.format("Brand Name: %s\nGeneric Name: %s\nType: %s\nQuantity: %d",brandName,genericName,type,quantity);
     }
 }

@@ -138,20 +138,20 @@ public class Pharmacy implements Pharmacist {
             case "1":
                 System.out.println("\nMEDICINES FOR COUGH");
                 System.out.println("____________________________________________________________________________________________________________________");
-                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s  | %12d", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
+                System.out.printf("  %-14s   |   %-14s   |   %-8s   |  %-9s   |  %10s  |  %12s", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
                 System.out.println("____________________________________________________________________________________________________________________");
                 for (int i = 0; i < medicineForCough.size(); i++) {
                     int price = 0;
                     if (medicineForCough.get(i) instanceof MedicineForCough) {
                         price = ((MedicineForCough) medicineForCough.get(i)).getPrice();
                     }
-                    System.out.printf("%-20s | %-24s | %-11d  | %-12s | %-15s | %10d\n", medicineForCough.get(i).getBrandName(), medicineForCough.get(i).getGenericName(), price, medicineForCough.get(i).getType(), medicineForCough.get(i).getExpirationDate(),medicineForCough.get(i).getQuantity());
+                    System.out.printf("%-18s | %-24s | %-11d  | %-12s | %-15s | %10d\n", medicineForCough.get(i).getBrandName(), medicineForCough.get(i).getGenericName(), price, medicineForCough.get(i).getType(), medicineForCough.get(i).getExpirationDate(),medicineForCough.get(i).getQuantity());
                     System.out.println("____________________________________________________________________________________________________________________");
                 }   break;
             case "2":
                 System.out.println("\nMEDICINES FOR HEADACHE");
                 System.out.println("____________________________________________________________________________________________________________________");
-                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s | %12d", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
+                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s |  %12s", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
                 System.out.println("____________________________________________________________________________________________________________________");
                 for (int i = 0; i < medicineForHeadache.size(); i++) {
                     int price = 0;
@@ -164,7 +164,7 @@ public class Pharmacy implements Pharmacist {
             case "3":
                 System.out.println("\nMEDICINES FOR BODY PAIN");
                 System.out.println("____________________________________________________________________________________________________________________");
-                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s | %12d", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
+                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s |  %12s", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
                 System.out.println("____________________________________________________________________________________________________________________");
                 for (int i = 0; i < medicineForBodyPain.size(); i++) {
                     int price = 0;
@@ -177,7 +177,7 @@ public class Pharmacy implements Pharmacist {
             case "4":
                 System.out.println("\nMEDICINES FOR ALLERGY");
                 System.out.println("____________________________________________________________________________________________________________________");
-                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s | %12d", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
+                System.out.printf("  %-22s   |   %-20s   |   %-8s   |  %-9s   |  %10s |  %12s", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date","Quantity\n");
                 System.out.println("____________________________________________________________________________________________________________________");
                 for (int i = 0; i < medicineForAllergy.size(); i++) {
                     int price = 0;

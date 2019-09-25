@@ -19,15 +19,15 @@ public class PharmacyApp {
         
         Pharmacy rose = new Pharmacy("Rose Pharmacy");
 
-        MedicineForCough ambroxol = new MedicineForCough("1-AL AX [+ Levocetirizine]","Ambroxol (OS: BAN, DCF)",20,"Tablet","September 30 ,2019",50);
-        MedicineForBodyPain ibuprofen = new MedicineForBodyPain("Alaxan Fr","Ibuprofen",20,"Tablet","September 25 ,2019",50);
-        MedicineForHeadache biogesic = new MedicineForHeadache("Biogesic","Paracetamol",20,"Tablet","January 20 ,2019",50);
-        MedicineForAllergies fongamil = new MedicineForAllergies("Fongamil","Omoconazole",20,"Tablet","January 20 ,2019",50);
-        SeniorCitizen lyda = new SeniorCitizen();
-          
-        rose.addMedicine(fongamil);
-        rose.addMedicine(biogesic);
-        rose.displayAvailableMedicines();
+
+       MedicineForCough ambroxol = new MedicineForCough("1-AL AX [+ Levocetirizine]","Ambroxol (OS: BAN, DCF)",20,"Tablet","September 30 ,2019",50);
+       MedicineForBodyPain ibuprofen = new MedicineForBodyPain("Alaxan Fr","Ibuprofen",20,"Tablet","September 25 ,2019",50);
+       MedicineForHeadache biogesic = new MedicineForHeadache("Biogesic","Paracetamol",20,"Tablet","January 20 ,2019",50);
+       MedicineForAllergies fongamil = new MedicineForAllergies("Fongamil","Omoconazole",20,"Tablet","January 20 ,2019",50);
+       SeniorCitizen lyda = new SeniorCitizen();
+         
+       rose.addMedicine(fongamil);
+       rose.displayAvailableMedicines();
         
         
     }
