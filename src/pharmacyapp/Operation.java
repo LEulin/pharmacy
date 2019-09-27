@@ -12,5 +12,4 @@ package pharmacyapp;
  */
 public interface Operation {
     
-    
 }

@@ -5,7 +5,6 @@
  */
 package pharmacyapp;
 
-import java.util.List;
 
 /**
  *

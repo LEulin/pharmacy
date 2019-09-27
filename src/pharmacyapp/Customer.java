@@ -11,36 +11,27 @@ package pharmacyapp;
  */
 public abstract class Customer implements Transaction {
     private Account account;
-    private Name name;
     private int money;
     private int age;
 
     public Customer() {
     }
 
-    public Customer(Account account) {
-        this.account = account;
+    public Customer(int money) {
+        this.money = money;
     }
 
-    public Customer(Name name, int age) {
-        this.name = name;
+    public Customer(Account account, int age) {
+        this.account = account;
         this.age = age;
     }
 
-    public Customer(Name name, int money, int age) {
-        this.name = name;
+    public Customer(Account account, int money, int age) {
+        this.account = account;
         this.money = money;
         this.age = age;
     }
-
-    public Name getName() {
-        return name;
-    }
-
-    public void setName(Name name) {
-        this.name = name;
-    }
-
+    
     public int getMoney() {
         return money;
     }
@@ -64,12 +55,13 @@ public abstract class Customer implements Transaction {
     public void setAccount(Account account) {
         this.account = account;
     }
-    
+
     @Override
     public String toString() {
-        return "Customer{" + "name=" + name + ", money=" + money + ", age=" + age + '}';
+        return "Customer{" + "account=" + account + ", money=" + money + ", age=" + age + '}';
     }
-
+    
+ 
     
 
   

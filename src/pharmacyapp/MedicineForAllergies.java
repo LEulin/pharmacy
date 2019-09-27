@@ -19,13 +19,10 @@ public class MedicineForAllergies extends Medicine{
     public MedicineForAllergies() {
     }
 
-    public MedicineForAllergies(String brandName, String genericName, String type, int quantity) {
-        super(brandName, genericName, type, quantity);
+    public MedicineForAllergies(int id, String brandName, String genericName, int price, String expirationDate, String type, int quantity) {
+        super(id, brandName, genericName, price, expirationDate, type, quantity);
     }
-
-    public MedicineForAllergies(String brandName, String genericName, int price, String type, String expirationDate,int quantity) {
-        super(brandName, genericName, price, type, expirationDate, quantity);
-    }
+    
     
     
 }

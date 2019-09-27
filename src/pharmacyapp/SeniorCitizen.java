@@ -14,13 +14,13 @@ public class SeniorCitizen extends Customer{
     public SeniorCitizen() {
     }
 
-    public SeniorCitizen(Name name, int age) {
-        super(name, age);
-    }
-
-    public SeniorCitizen(Name name, int money, int age) {
-        super(name, money, age);
-    }
+//    public SeniorCitizen(Name name, int age) {
+//        super(name, age);
+//    }
+//
+//    public SeniorCitizen(Name name, int money, int age) {
+//        super(name, money, age);
+//    }
 
    @Override
     public void viewAvailableMedicines(Pharmacy p){
@@ -28,8 +28,8 @@ public class SeniorCitizen extends Customer{
     }
 
     @Override
-    public void purchaseMedicines(Medicine m) {
-        
+    public boolean purchaseMedicines( Medicine m) {
+        return true;
     }
 
     @Override
@@ -43,13 +43,23 @@ public class SeniorCitizen extends Customer{
     }
 
     @Override
-    public void Login() {
+    public void Login(Account a) {
         
     }
 
     @Override
     public void Logout() {
         
+    }
+
+    @Override
+    public void Register(Account a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void choices(Pharmacy p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

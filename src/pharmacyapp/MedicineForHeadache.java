@@ -19,12 +19,9 @@ public class MedicineForHeadache extends Medicine{
     public MedicineForHeadache() {
     }
 
-    public MedicineForHeadache(String brandName, String genericName, String type, int quantity) {
-        super(brandName, genericName, type, quantity);
+    public MedicineForHeadache(int id, String brandName, String genericName, int price, String expirationDate, String type, int quantity) {
+        super(id, brandName, genericName, price, expirationDate, type, quantity);
     }
-
-    public MedicineForHeadache(String brandName, String genericName, int price, String type, String expirationDate,int quantity) {
-        super(brandName, genericName, price, type, expirationDate, quantity);
-    }
+    
     
 }

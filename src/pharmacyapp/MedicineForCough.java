@@ -21,13 +21,10 @@ public class MedicineForCough extends Medicine{
     public MedicineForCough() {
     }
 
-    public MedicineForCough(String brandName, String genericName, String type, int quantity) {
-        super(brandName, genericName, type, quantity);
+    public MedicineForCough(int id, String brandName, String genericName, int price, String expirationDate, String type, int quantity) {
+        super(id, brandName, genericName, price, expirationDate, type, quantity);
     }
-
-    public MedicineForCough(String brandName, String genericName, int price, String type, String expirationDate, int quantity) {
-        super(brandName, genericName, price, type, expirationDate, quantity);
-    }
- 
+    
+    
     
 }

@@ -9,11 +9,14 @@ package pharmacyapp;
  *
  * @author laurentera_sd2022
  */
-public interface Transaction extends SeniorCitizenDiscount {
+public interface Transaction {
     
     public void viewAvailableMedicines(Pharmacy p);
-    public void purchaseMedicines(Medicine m);
+    public boolean purchaseMedicines(Medicine m);
     public void viewPurchasedMedicines(Medicine m);
-    public void Login();
+    public void choices(Pharmacy p);
+    public void availDiscount(Medicine m);
+    public void Register(Account a);
+    public void Login(Account a);
     public void Logout();
 }

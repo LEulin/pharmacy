@@ -10,7 +10,7 @@ package pharmacyapp;
  * @author 2ndyrGroupB
  */
 public class Medicine {
-    
+    private int id;
     private String brandName;
     private String genericName;
     private int price;
@@ -20,23 +20,26 @@ public class Medicine {
     
     public Medicine() {
     }
-    
-    public Medicine(String brandName, String genericName, String type, int quantity) {
-        this.brandName = brandName;
-        this.genericName = genericName;
-        this.type = type;
-        this.quantity = quantity;
-    }
 
-    public Medicine(String brandName, String genericName, int price, String type, String expirationDate, int quantity) {
+    public Medicine(int id, String brandName, String genericName, int price, String type, String expirationDate, int quantity) {
+        this.id = id;
         this.brandName = brandName;
         this.genericName = genericName;
         this.price = price;
-        this.type = type;
         this.expirationDate = expirationDate;
+        this.type = type;
         this.quantity = quantity;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     public String getBrandName() {
         return brandName;
     }
