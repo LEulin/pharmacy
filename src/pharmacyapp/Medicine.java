@@ -25,7 +25,7 @@ public class Medicine {
         this.id = id;
     }
     
-    public Medicine(String brandName, String genericName, String type, int price, String expirationDate, int quantity){
+    public Medicine(String brandName, String genericName,  int price, String type, String expirationDate, int quantity){
         this.brandName = brandName;
         this.genericName = genericName;
         this.price = price;

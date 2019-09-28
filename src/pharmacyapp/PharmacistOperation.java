@@ -34,4 +34,5 @@ public interface PharmacistOperation {
     public void displayAvailableMedicinesForAllergies();
     // For choices of operation
     public void choices();
+    public void Login();
 }

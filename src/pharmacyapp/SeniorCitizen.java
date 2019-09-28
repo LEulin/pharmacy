@@ -14,42 +14,49 @@ public class SeniorCitizen extends Customer{
     public SeniorCitizen() {
     }
 
-//    public SeniorCitizen(Name name, int age) {
-//        super(name, age);
-//    }
-//
-//    public SeniorCitizen(Name name, int money, int age) {
-//        super(name, money, age);
-//    }
-
-   @Override
-    public void viewAvailableMedicines(Pharmacy p){
-        
+    @Override
+    public void viewAvailableMedicines(Pharmacy p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean purchaseMedicines( Medicine m) {
-        return true;
+    public boolean purchaseMedicines() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void viewPurchasedMedicines(Medicine m) {
-        
+    public boolean purchaseMedicineForCough(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean purchaseMedicineForHeadache(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean purchaseMedicineForBodyPain(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean purchaseMedicineForAllergies(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void viewPurchasedMedicines() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void choices() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void availDiscount(Medicine m) {
-        
-    }
-
-    @Override
-    public void Login(Account a) {
-        
-    }
-
-    @Override
-    public void Logout() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -58,8 +65,14 @@ public class SeniorCitizen extends Customer{
     }
 
     @Override
-    public void choices(Pharmacy p) {
+    public void Login(Account a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public void Logout() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }

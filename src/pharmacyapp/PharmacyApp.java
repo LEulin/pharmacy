@@ -39,7 +39,6 @@ public class PharmacyApp {
         MedicineForAllergies vicks = new MedicineForAllergies(0, "Vicks", "Dolpenal", 16, "Capsule", "September 5 ,2020", 50);
         MedicineForAllergies pau = new MedicineForAllergies(0, "Pau de Arco", "Flemex", 75, "Syrup", "April 10 ,2022", 50);
         MedicineForAllergies omega = new MedicineForAllergies(0, "Omega Plus", "Forte", 16, "Capsule", "November 12 ,2020", 50);
-
         Adult mark = new Adult(500);
         Account a = new Account();
         Pharmacist p = new Pharmacist();
@@ -66,12 +65,13 @@ public class PharmacyApp {
 //        p.addMedicineForAllergies(vicks);
 //        p.addMedicineForAllergies(omega);
 //        // Pharmacy Side
+        mark.Register(a);
         p.choices();
         mark.choices();
         rose.displayAllAvailableMedicinesForCough(p);
         // user side
 //        mark.Register(a);
-//        mark.Login(a);
+
         mark.purchaseMedicines();
         rose.displayAllAvailableMedicinesForCough(p);
 //        mark.viewAvailableMedicines(rose);

@@ -178,6 +178,7 @@ public class Adult extends Customer {
         String pass = input.nextLine();
         a.setPassWord(pass);
         System.out.println("\nYou're now registered.\n_____________________________________");
+        this.Login(a);
     }
 
     @Override
