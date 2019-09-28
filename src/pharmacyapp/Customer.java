@@ -9,7 +9,7 @@ package pharmacyapp;
  *
  * @author 2ndyrGroupB
  */
-public abstract class Customer implements Transaction {
+public abstract class Customer extends Person implements CustomerOperation {
     private Account account;
     private int money;
     private int age;

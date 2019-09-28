@@ -21,6 +21,19 @@ public class Medicine {
     public Medicine() {
     }
 
+    public Medicine(int id) {
+        this.id = id;
+    }
+    
+    public Medicine(String brandName, String genericName, String type, int price, String expirationDate, int quantity){
+        this.brandName = brandName;
+        this.genericName = genericName;
+        this.price = price;
+        this.expirationDate = expirationDate;
+        this.type = type;
+        this.quantity = quantity;
+    }
+    
     public Medicine(int id, String brandName, String genericName, int price, String type, String expirationDate, int quantity) {
         this.id = id;
         this.brandName = brandName;
@@ -30,6 +43,7 @@ public class Medicine {
         this.type = type;
         this.quantity = quantity;
     }
+    
 
     public int getId() {
         return id;

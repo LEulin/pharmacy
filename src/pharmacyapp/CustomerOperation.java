@@ -9,12 +9,16 @@ package pharmacyapp;
  *
  * @author laurentera_sd2022
  */
-public interface Transaction {
+public interface CustomerOperation {
     
     public void viewAvailableMedicines(Pharmacy p);
-    public boolean purchaseMedicines(Medicine m);
-    public void viewPurchasedMedicines(Medicine m);
-    public void choices(Pharmacy p);
+    public boolean purchaseMedicines();
+    public boolean purchaseMedicineForCough(int id);
+    public boolean purchaseMedicineForHeadache(int id);
+    public boolean purchaseMedicineForBodyPain(int id);
+    public boolean purchaseMedicineForAllergies(int id);
+    public void viewPurchasedMedicines();
+    public void choices();
     public void availDiscount(Medicine m);
     public void Register(Account a);
     public void Login(Account a);

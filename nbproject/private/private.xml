@@ -3,22 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Transaction.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/MedicineForAllergies.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/SeniorCitizen.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Medicine.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Adult.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/SeniorCitizenDiscount.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/MedicineForCough.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Account.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Name.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/PharmacyApp.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Pharmacy.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/MedicineForBodyPain.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Pharmacist.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/MedicineForHeadache.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Customer.java</file>
-            <file>file:/C:/Users/laurentera_sd2022/Documents/NetBeansProjects/PharmacyApp/src/pharmacyapp/Operation.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Adult.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Medicine.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/PharmacistOperation.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Pharmacy.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/MedicineForBodyPain.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/MedicineForHeadache.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/CustomerOperation.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/MedicineForCough.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/MedicineForAllergies.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Pharmacist.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Customer.java</file>
         </group>
     </open-files>
 </project-private>

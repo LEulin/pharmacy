@@ -32,36 +32,106 @@ public class Adult extends Customer {
 
     @Override
     public void viewAvailableMedicines(Pharmacy p) {
-        
+
     }
 
     @Override
-    public boolean purchaseMedicines(Medicine m) {
-        System.out.print("Select the ID of the medicine you want to buy: \n");
-        String input_id = input.nextLine();
-        int remain_money = this.getMoney() - m.getPrice();
-        if(input_id.equals("1")){
-            System.out.println("Your money: "+ remain_money);
+    public boolean purchaseMedicines() {
+        System.out.println("Select a specific list of medicines you want to buy of. ");
+        System.out.println("1. Medicines For Cough\n2. Medicines For Headache\n3. Medicines For Body Pain\n4. Medicines For Allergies");
+        String selection = input.nextLine();
+        switch (selection) {
+            case "1":
+                this.purchaseMedicineForCough(0);
+                break;
+            case "2":
+                this.purchaseMedicineForHeadache(0);
+                break;
+            case "3":
+                this.purchaseMedicineForBodyPain(0);
+                break;
+            case "4":
+                this.purchaseMedicineForAllergies(0);
+                break;
+            default:
+                System.out.println("Invalid Input!");
+                break;
         }
         return true;
     }
 
     @Override
-    public void viewPurchasedMedicines(Medicine m) {
-        
+    public boolean purchaseMedicineForHeadache(int id) {
+        Pharmacist p = new Pharmacist();
+        p.displayAvailableMedicinesForHeadache();
+        System.out.print("Select the ID of the medicine you want to buy: ");
+        id = input.nextInt();
+        for (MedicineForHeadache med : Customer.getMedicineForHeadache()) {
+            if (med.getId() == id) {
+                med.setQuantity(med.getQuantity() - 1);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean purchaseMedicineForBodyPain(int id) {
+        Pharmacist p = new Pharmacist();
+        p.displayAvailableMedicinesForBodyPain();
+        System.out.print("Select the ID of the medicine you want to buy: ");
+        id = input.nextInt();
+        for (MedicineForBodyPain med : Customer.getMedicineForBodyPain()) {
+            if (med.getId() == id) {
+                med.setQuantity(med.getQuantity() - 1);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean purchaseMedicineForAllergies(int id) {
+        Pharmacist p = new Pharmacist();
+        p.displayAvailableMedicinesForAllergies();
+        System.out.print("Select the ID of the medicine you want to buy: ");
+        id = input.nextInt();
+        for (MedicineForAllergies med : Customer.getMedicineForAllergies()) {
+            if (med.getId() == id) {
+                med.setQuantity(med.getQuantity() - 1);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean purchaseMedicineForCough(int id) {
+        Pharmacist p = new Pharmacist();
+        p.displayAvailableMedicinesForCough();
+        System.out.print("Select the ID of the medicine you want to buy: ");
+        id = input.nextInt();
+        for (MedicineForCough med : Customer.getMedicineForCough()) {
+            if (med.getId() == id) {
+                med.setQuantity(med.getQuantity() - 1);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void viewPurchasedMedicines() {
+
     }
 
     @Override
     public void availDiscount(Medicine m) {
- 
+
     }
 
     @Override
     public void Login(Account a) {
         boolean login = false;
-        while (login!=true) {
+        while (login != true) {
             int trial = 0;
-            while (trial!=3) {
+            while (trial != 3) {
                 System.out.print("Enter Username: ");
                 String username = input.nextLine();
                 System.out.print("Enter Password: ");
@@ -86,7 +156,7 @@ public class Adult extends Customer {
 
     @Override
     public void Logout() {
-
+        
     }
 
     @Override
@@ -111,18 +181,47 @@ public class Adult extends Customer {
     }
 
     @Override
-    public void choices(Pharmacy p) {
-        Medicine m1 = new Medicine();
-        while(true){
-            System.out.print("Select Transaction: \n");
-            System.out.println("1. View Available Medicines\n2. Purchase Medicines\n3. View Purchased Medicines");
+    public void choices() {
+        Pharmacist p = new Pharmacist();
+        while (true) {
+            System.out.println("\n--- CHOOSE OPERATION ---");
+            System.out.println("\n1. View Available Medicines\n2. Purchase Medicines\n3. View Purchased Medicines\n");
+            System.out.print("Select Transaction: ");
             String selection = input.nextLine();
-            if(selection.equals("1")){
-                p.displayAvailableMedicines();
-            }else if(selection.equals("2")){
-                p.displayAvailableMedicines();
-                this.purchaseMedicines(m1);
+            switch (selection) {
+                case "1":
+                    System.out.println("\n1. Medicines for cough\n2. Medicines for headache\n3. Medicines for body pain\n4. Medicines for allergies");
+                    System.out.print("\nWhat specific list medicines you want to view?: ");
+                    String choose = input.nextLine();
+                    switch (choose) {
+                        case "1":
+                            p.displayAvailableMedicinesForCough();
+                            break;
+                        case "2":
+                            p.displayAvailableMedicinesForHeadache();
+                            break;
+                        case "3":
+                            p.displayAvailableMedicinesForBodyPain();
+                            break;
+                        case "4":
+                            p.displayAvailableMedicinesForAllergies();
+                            break;
+                        default:
+                            System.out.println("Invalid Input!");
+                            break;
+                    }
+                    break;
+                case "2":
+                    this.purchaseMedicines();
+                    break;
+                case "3":
+                    this.viewPurchasedMedicines();
+                    break;
+                default:
+                    System.out.println("Invalid Input!");
+                    break;
             }
         }
     }
+
 }

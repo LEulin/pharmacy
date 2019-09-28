@@ -5,8 +5,6 @@
  */
 package pharmacyapp;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -14,9 +12,12 @@ import java.util.List;
  */
 public class MedicineForHeadache extends Medicine{
     
-    private List<MedicineForHeadache> medicineHeadache = new ArrayList<MedicineForHeadache>();    
 
     public MedicineForHeadache() {
+    }
+
+    public MedicineForHeadache(int id) {
+        super(id);
     }
 
     public MedicineForHeadache(int id, String brandName, String genericName, int price, String expirationDate, String type, int quantity) {
