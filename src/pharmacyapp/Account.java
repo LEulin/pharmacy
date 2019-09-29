@@ -15,6 +15,7 @@ import java.util.List;
 public class Account {
 
     List<Account> customer_list = new ArrayList<Account>();
+    List<Account> pharmaList = new ArrayList<Account>();
 
     private String fname;
     private String lname;
@@ -44,6 +45,22 @@ public class Account {
         this.pharLicensedNo = pharLicensedNo;
         this.address = address;
         this.age = age;
+    }
+
+    public List<Account> getCustomer_list() {
+        return customer_list;
+    }
+
+    public void setCustomer_list(List<Account> customer_list) {
+        this.customer_list = customer_list;
+    }
+
+    public List<Account> getPharmaList() {
+        return pharmaList;
+    }
+
+    public void setPharmaList(List<Account> pharmaList) {
+        this.pharmaList = pharmaList;
     }
 
     public String getFname() {
@@ -102,8 +119,8 @@ public class Account {
         this.pharLicensedNo = pharLicensedNo;
     }
 
-    public void displayListOfCustomers(){
-        System.out.println("\n\t\t\t\t\t\t--- CUSTOMERS ---");
+    public void displayAccountsOfCustomers(){
+        System.out.println("\n\t\t\t\t\t\t--- REGISTERED CUSTOMERS ---");
         System.out.println("____________________________________________________________________________________________________________________");
         System.out.printf("  %-10s  | %-10s   |   %-10s   |   %-10s   |  %-10s   |  %10s ", "First name", "Last name", "Username", "Password", "Address", "Age\n");
         System.out.println("____________________________________________________________________________________________________________________");
@@ -113,9 +130,20 @@ public class Account {
         }
     }
     
+    public void displayAccountsOfPharmacist(){
+        System.out.println("\n\t\t\t\t\t\t--- REGISTERED Pharmacist ---");
+        System.out.println("____________________________________________________________________________________________________________________");
+        System.out.printf("  %-10s  | %-10s   |   %-10s   |   %-10s   |  %-10s   |  %-10s   |  %10s ", "First name", "Last name", "Username", "Password", "Licensed No" ,"Address", "Age\n");
+        System.out.println("____________________________________________________________________________________________________________________");
+        for (int i = 0; i < User.getPharmaList().size(); i++) {
+            System.out.printf(" %-10s  |  %-10s  |  %-10s  |  %-10s   |  %-10d   |  %-10s  | %10d\n", User.getPharmaList().get(i).getFname(), User.getPharmaList().get(i).getLname(), User.getPharmaList().get(i).getUserName(), User.getPharmaList().get(i).getPassWord(),User.getPharmaList().get(i).getPharLicensedNo(), User.getPharmaList().get(i).getAddress(), User.getPharmaList().get(i).getAge());
+            System.out.println("____________________________________________________________________________________________________________________");
+        }
+    }
+    
     @Override
     public String toString() {
-        this.displayListOfCustomers();
+        this.displayAccountsOfCustomers();
         return " ";
     }
 

@@ -64,7 +64,7 @@ public class Adult extends Customer {
     public boolean purchaseMedicineForHeadache(int id) {
         Pharmacist p = new Pharmacist();
         p.displayAvailableMedicinesForHeadache();
-        System.out.print("Select the ID of the medicine you want to buy: ");
+        System.out.print("\nSelect the ID of the medicine you want to buy: ");
         id = input.nextInt();
         for (MedicineForHeadache med : Customer.getMedicineForHeadache()) {
             if (med.getId() == id) {
@@ -80,7 +80,7 @@ public class Adult extends Customer {
     public boolean purchaseMedicineForBodyPain(int id) {
         Pharmacist p = new Pharmacist();
         p.displayAvailableMedicinesForBodyPain();
-        System.out.print("Select the ID of the medicine you want to buy: ");
+        System.out.print("\nSelect the ID of the medicine you want to buy: ");
         id = input.nextInt();
         for (MedicineForBodyPain med : Customer.getMedicineForBodyPain()) {
             if (med.getId() == id) {
@@ -97,11 +97,17 @@ public class Adult extends Customer {
     public boolean purchaseMedicineForAllergies(int id) {
         Pharmacist p = new Pharmacist();
         p.displayAvailableMedicinesForAllergies();
-        System.out.print("Select the ID of the medicine you want to buy: ");
+        System.out.print("\nSelect the ID of the medicine you want to buy: ");
         id = input.nextInt();
-        for (MedicineForAllergies med : Customer.getMedicineForAllergies()) {
+        for (MedicineForAllergies med : Pharmacist.getMedicineForAllergies()) {
             if (med.getId() == id) {
-                med.setQuantity(med.getQuantity() - 1);
+                System.out.print("\nHow many " + med.getBrandName() + " do you want to buy? : ");
+                int buy = input.nextInt();
+                if (med.getQuantity() == buy) {
+                    User.getMedicineForAllergies().remove(med);
+                } else if (med.getQuantity() > buy) {
+                    med.setQuantity(med.getQuantity() - buy);
+                }
             } else if (id != med.getId()) {
                 System.out.println("Medicine does not exist.");
             }
@@ -113,7 +119,7 @@ public class Adult extends Customer {
     public boolean purchaseMedicineForCough(int id) {
         Pharmacist p = new Pharmacist();
         p.displayAvailableMedicinesForCough();
-        System.out.print("Select the ID of the medicine you want to buy: ");
+        System.out.print("\nSelect the ID of the medicine you want to buy: ");
         id = input.nextInt();
         for (MedicineForCough med : Customer.getMedicineForCough()) {
             if (med.getId() == id) {
@@ -137,26 +143,21 @@ public class Adult extends Customer {
 
     @Override
     public void LoginAsAdult(Account a) {
-        boolean login = false;
-        while (login != true) {
-            int trial = 0;
-            while (trial != 3) {
-                System.out.print("\nEnter Username: ");
-                String username = input.nextLine();
-                System.out.print("Enter Password: ");
-                String password = input.nextLine();
-                if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
-                    Pharmacy rose = new Pharmacy("Rose Pharmacy");
-                    System.out.println("\n--- WELCOME "+ rose.getName()+"  ---\n\n"+a.getFname()+" "+a.getLname()+ " You are now logged in.\n");
-                    System.out.println("You can now purchase medicines.");
-                    login = true;
-                    this.choices(a);
-                } else {
-                    System.out.println("Incorrect filled inputs.");
-                    trial++;
-                    break;
-                }
-                break;
+        System.out.println("\n--- LOGIN ---\nYou have 3 trials to Login");
+        int trial = 0;
+        while (trial != 3) {
+            System.out.print("\nEnter Username: ");
+            String username = input.nextLine();
+            System.out.print("Enter Password: ");
+            String password = input.nextLine();
+            if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
+                Pharmacy rose = new Pharmacy("Rose Pharmacy");
+                System.out.println("\n--- WELCOME " + rose.getName() + "  ---\n\n" + a.getFname() + " " + a.getLname() + " You are now logged in.\n");
+                System.out.println("You can now purchase medicines.");
+                this.choices(a);
+            } else {
+                System.out.println("Incorrect filled inputs.");
+                trial++;
             }
         }
     }
@@ -167,7 +168,7 @@ public class Adult extends Customer {
         while (true) {
             System.out.println("\n--- CHOOSE OPERATION ---");
             System.out.println("\n1. View Available Medicines\n2. Purchase Medicines\n3. View Purchased Medicines\n4. Logout");
-            System.out.print("Select Transaction: ");
+            System.out.print("\nSelect Transaction: ");
             String selection = input.nextLine();
             switch (selection) {
                 case "1":
@@ -201,10 +202,10 @@ public class Adult extends Customer {
                 case "4":
                     System.out.print("\nAre you sure to Logout? yes/no : ");
                     String logout = input.nextLine();
-                    if(logout.equals("yes")){
+                    if (logout.equals("yes")) {
                         this.Logout(a);
-                    }else if(logout.equals("no")){
-                        
+                    } else if (logout.equals("no")) {
+
                     }
                     break;
                 default:
@@ -221,6 +222,6 @@ public class Adult extends Customer {
 
     @Override
     public void LoginAsSeniorCitizen(Account a) {
-
+        
     }
 }

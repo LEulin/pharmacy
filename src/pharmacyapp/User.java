@@ -14,7 +14,8 @@ import java.util.Scanner;
  * @author 2ndyrGroupB
  */
 public class User implements UserTransaction {
-    
+
+    private static List<Account> pharmaList = new ArrayList<Account>();
     private static List<Account> customerList = new ArrayList<Account>();
     private static List<MedicineForCough> medicineForCough = new ArrayList<MedicineForCough>();
     private static List<MedicineForHeadache> medicineForHeadache = new ArrayList<MedicineForHeadache>();
@@ -28,6 +29,14 @@ public class User implements UserTransaction {
 
     public static void setCustomerList(List<Account> customerList) {
         User.customerList = customerList;
+    }
+
+    public static List<Account> getPharmaList() {
+        return pharmaList;
+    }
+
+    public static void setPharmaList(List<Account> pharmaList) {
+        User.pharmaList = pharmaList;
     }
 
     public User() {
@@ -85,21 +94,21 @@ public class User implements UserTransaction {
     }
 
     public void LoginAs(Account a) {
-        System.out.print("Login as Customer or Pharmacist? : ");
+        System.out.print("\n1. Customer\n2. Pharmacist\n\nLogin as: ");
         String log = user_input.nextLine();
-        if (log.equals("Customer")) {
+        if (log.equals("1")) {
             this.LoginAsCustomer(a);
-        } else if (log.equals("Pharmacist")) {
+        } else if (log.equals("2")) {
             this.LoginAsPharmacist(a);
         }
     }
 
     public void Login(Account a) {
-        System.out.print("\nLogin as Customer or Pharmacist? : ");
+        System.out.print("\n1. Customer\n2. Pharmacist\n\nLogin as: ");
         String log = user_input.nextLine();
-        if (log.equals("Customer")) {
+        if (log.equals("1")) {
             this.LoginAsCustomer(a);
-        } else if (log.equals("Pharmacist")) {
+        } else if (log.equals("2")) {
             this.LoginAsPharmacist(a);
         }
     }
@@ -123,15 +132,15 @@ public class User implements UserTransaction {
     @Override
     public void Register(Account a) {
         System.out.println("\n--- REGISTER HERE ---");
-        System.out.println("\n1. Customer\n2. Pharmacist\n");
+        System.out.print("\n1. Customer\n2. Pharmacist\n");
         System.out.print("\nRegister as: ");
         String register = user_input.nextLine();
         switch (register) {
-            case "Customer": {
+            case "1": {
                 this.RegisterAsCustomer(a);
                 break;
             }
-            case "Pharmacist": {
+            case "2": {
                 this.RegisterAsPharmacist(a);
                 break;
             }
@@ -145,6 +154,7 @@ public class User implements UserTransaction {
     public void LoginAsPharmacist(Account a) {
         Pharmacist pharmacist = new Pharmacist();
         pharmacist.Login(a);
+
     }
 
     @Override
@@ -223,6 +233,7 @@ public class User implements UserTransaction {
         System.out.print("Enter age : ");
         String age = user_input.nextLine();
         a.setAge(Integer.valueOf(age));
+        pharmaList.add(a);
         this.LoginAsPharmacist(a);
     }
 

@@ -84,12 +84,12 @@ public class Pharmacist extends User implements PharmacistOperation {
         System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
         int rem = input.nextInt();
         int q = m.getQuantity();
-        if(q == 1){
+        if (q == 1) {
             User.getMedicineForCough().remove(m);
-        }else if (q > 1){
+        } else if (q > 1) {
             int a = q - rem;
             m.setQuantity(a);
-        }else if(q == rem){
+        } else if (q == rem) {
             User.getMedicineForCough().remove(m);
         }
         return true;
@@ -100,12 +100,12 @@ public class Pharmacist extends User implements PharmacistOperation {
         System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
         int rem = input.nextInt();
         int q = m.getQuantity();
-        if(q == 1){
+        if (q == 1) {
             User.getMedicineForHeadache().remove(m);
-        }else if (q > 1){
+        } else if (q > 1) {
             int a = q - rem;
             m.setQuantity(a);
-        }else if(q == rem){
+        } else if (q == rem) {
             User.getMedicineForHeadache().remove(m);
         }
         return true;
@@ -116,12 +116,12 @@ public class Pharmacist extends User implements PharmacistOperation {
         System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
         int rem = input.nextInt();
         int q = m.getQuantity();
-        if(q == 1){
+        if (q == 1) {
             User.getMedicineForBodyPain().remove(m);
-        }else if (q > 1){
+        } else if (q > 1) {
             int a = q - rem;
             m.setQuantity(a);
-        }else if(q == rem){
+        } else if (q == rem) {
             User.getMedicineForBodyPain().remove(m);
         }
         return true;
@@ -132,12 +132,12 @@ public class Pharmacist extends User implements PharmacistOperation {
         System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
         int rem = input.nextInt();
         int q = m.getQuantity();
-        if(q == 1){
+        if (q == 1) {
             User.getMedicineForAllergies().remove(m);
-        }else if (q > 1){
+        } else if (q > 1) {
             int a = q - rem;
             m.setQuantity(a);
-        }else if(q == rem){
+        } else if (q == rem) {
             User.getMedicineForAllergies().remove(m);
         }
         return true;
@@ -397,17 +397,17 @@ public class Pharmacist extends User implements PharmacistOperation {
                             break;
                     }
                     break;
-                    
+
                 case "5":
                     System.out.println(User.getCustomerList());
                     break;
                 case "6":
                     System.out.print("\nAre you sure to Logout? yes/no : ");
                     String logout = input.nextLine();
-                    if(logout.equals("yes")){
+                    if (logout.equals("yes")) {
                         this.Logout(a);
-                    }else if(logout.equals("no")){
-                        
+                    } else if (logout.equals("no")) {
+
                     }
                     break;
                 default:
@@ -419,39 +419,35 @@ public class Pharmacist extends User implements PharmacistOperation {
 
     @Override
     public void Login(Account a) {
-        boolean login = false;
-        while (login != true) {
-            int trial = 0;
-            while (trial != 3) {
-                System.out.print("\nEnter Username: ");
-                String username = input.nextLine();
-                System.out.print("Enter Password: ");
-                String password = input.nextLine();
-                Pharmacy rose = new Pharmacy("Rose");
-                if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
-                    System.out.println("\n "+a.getFname()+" "+a.getLname()+ " you are now logged in.\n");
-                    System.out.println("You can now operate the pharmacy.\n");
-                    login = true;
-                    this.choices(a);
-                } else {
-                    System.out.println("\nIncorrect filled inputs.");
-                    trial++;
-                    break;
-                }
-                break;
+        System.out.println("\n--- LOGIN ---\nYou have 3 trials to Login");
+        int trial = 0;
+        while (trial != 3) {
+            System.out.print("\nEnter Username: ");
+            String username = input.nextLine();
+            System.out.print("Enter Password: ");
+            String password = input.nextLine();
+            Pharmacy rose = new Pharmacy("Rose");
+            if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
+                System.out.println("\n " + a.getFname() + " " + a.getLname() + " you are now logged in.\n");
+                System.out.println("You can now operate the pharmacy.\n");
+                this.choices(a);
+            } else {
+                System.out.println("\nIncorrect filled inputs.");
+                trial++;
             }
         }
+        
     }
 
     @Override
     public void Logout(Account a) {
         super.Logout(a);
-        
+
     }
 
     @Override
     public void Register(Account a) {
-
+        
     }
 
 }
