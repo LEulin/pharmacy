@@ -5,34 +5,48 @@
  */
 package pharmacyapp;
 
-
 /**
  *
  * @author laurentera_sd2022
  */
 public interface PharmacistOperation {
-    
+
     // For Inventory of remaining medicines in a specific list of medicines
     public void inventoryMedicineForCough(MedicineForCough m);
+
     public void inventoryMedicineForHeadache(MedicineForHeadache m);
+
     public void inventoryMedicineForBodyPain(MedicineForBodyPain m);
+
     public void inventoryMedicineForAllergies(MedicineForAllergies m);
+
     // For Adding Medicines to a specific list of Medicines
     public boolean addMedicineForCough(MedicineForCough m);
+
     public boolean addMedicineForHeadache(MedicineForHeadache m);
+
     public boolean addMedicineForBodyPain(MedicineForBodyPain m);
+
     public boolean addMedicineForAllergies(MedicineForAllergies m);
+
     // For Removing Medicines to a specific list of Medicines
     public boolean removeMedicineForCough(MedicineForCough m);
+
     public boolean removeMedicineForHeadache(MedicineForHeadache m);
+
     public boolean removeMedicineForBodyPain(MedicineForBodyPain m);
+
     public boolean removeMedicineForAllergies(MedicineForAllergies m);
+
     // For Displaying the available medicines in the specific list of medicines
     public void displayAvailableMedicinesForCough();
+
     public void displayAvailableMedicinesForHeadache();
+
     public void displayAvailableMedicinesForBodyPain();
+
     public void displayAvailableMedicinesForAllergies();
+
     // For choices of operation
-    public void choices();
-    public void Login();
+    public void choices(Account a);
 }

@@ -10,17 +10,26 @@ package pharmacyapp;
  * @author laurentera_sd2022
  */
 public interface CustomerOperation {
-    
+
     public void viewAvailableMedicines(Pharmacy p);
+
     public boolean purchaseMedicines();
+
     public boolean purchaseMedicineForCough(int id);
+
     public boolean purchaseMedicineForHeadache(int id);
+
     public boolean purchaseMedicineForBodyPain(int id);
+
     public boolean purchaseMedicineForAllergies(int id);
+
     public void viewPurchasedMedicines();
-    public void choices();
+
+    public void choices(Account a);
+
     public void availDiscount(Medicine m);
-    public void Register(Account a);
-    public void Login(Account a);
-    public void Logout();
+
+    public void LoginAsAdult(Account a);
+
+    public void LoginAsSeniorCitizen(Account a);
 }

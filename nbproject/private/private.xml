@@ -5,11 +5,12 @@
         <group>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Person.java</file>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Adult.java</file>
-            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Medicine.java</file>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Pharmacy.java</file>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/PharmacistOperation.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/SeniorCitizen.java</file>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/PharmacyApp.java</file>
             <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Pharmacist.java</file>
+            <file>file:/C:/Users/2ndyrgroupb/Documents/NetBeansProjects/pharmacy/src/pharmacyapp/Customer.java</file>
         </group>
     </open-files>
 </project-private>

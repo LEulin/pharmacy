@@ -69,6 +69,8 @@ public class Adult extends Customer {
         for (MedicineForHeadache med : Customer.getMedicineForHeadache()) {
             if (med.getId() == id) {
                 med.setQuantity(med.getQuantity() - 1);
+            } else if (id != med.getId()) {
+                System.out.println("Medicine does not exist.");
             }
         }
         return true;
@@ -83,7 +85,10 @@ public class Adult extends Customer {
         for (MedicineForBodyPain med : Customer.getMedicineForBodyPain()) {
             if (med.getId() == id) {
                 med.setQuantity(med.getQuantity() - 1);
+            } else if (id != med.getId()) {
+                System.out.println("Medicine does not exist.");
             }
+
         }
         return true;
     }
@@ -97,6 +102,8 @@ public class Adult extends Customer {
         for (MedicineForAllergies med : Customer.getMedicineForAllergies()) {
             if (med.getId() == id) {
                 med.setQuantity(med.getQuantity() - 1);
+            } else if (id != med.getId()) {
+                System.out.println("Medicine does not exist.");
             }
         }
         return true;
@@ -111,6 +118,8 @@ public class Adult extends Customer {
         for (MedicineForCough med : Customer.getMedicineForCough()) {
             if (med.getId() == id) {
                 med.setQuantity(med.getQuantity() - 1);
+            } else if (id != med.getId()) {
+                System.out.println("Medicine does not exist.");
             }
         }
         return true;
@@ -127,23 +136,21 @@ public class Adult extends Customer {
     }
 
     @Override
-    public void Login(Account a) {
+    public void LoginAsAdult(Account a) {
         boolean login = false;
         while (login != true) {
             int trial = 0;
             while (trial != 3) {
-                System.out.print("Enter Username: ");
+                System.out.print("\nEnter Username: ");
                 String username = input.nextLine();
                 System.out.print("Enter Password: ");
                 String password = input.nextLine();
-                if (username.equals(a.getUserName()) && password.equals(a.getPassWord()) && a.getAge() >= 60) {
-                    System.out.println("You are now logged in.\n");
-                    System.out.println("You can now purchase medicine with 20% discount.");
-                    login = true;
-                } else if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
-                    System.out.println("You are now logged in.\n");
+                if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
+                    Pharmacy rose = new Pharmacy("Rose Pharmacy");
+                    System.out.println("\n--- WELCOME "+ rose.getName()+"  ---\n\n"+a.getFname()+" "+a.getLname()+ " You are now logged in.\n");
                     System.out.println("You can now purchase medicines.");
                     login = true;
+                    this.choices(a);
                 } else {
                     System.out.println("Incorrect filled inputs.");
                     trial++;
@@ -155,38 +162,11 @@ public class Adult extends Customer {
     }
 
     @Override
-    public void Logout() {
-        
-    }
-
-    @Override
-    public void Register(Account a) {
-        System.out.println("Register here!\n");
-        System.out.print("Enter First name: ");
-        String fname = input.nextLine();
-        a.setFname(fname);
-        System.out.print("Enter Last name: ");
-        String lname = input.nextLine();
-        a.setLname(lname);
-        System.out.print("Enter your age: ");
-        String age = input.nextLine();
-        a.setAge(Integer.valueOf(age));
-        System.out.print("Enter Username: ");
-        String uname = input.nextLine();
-        a.setUserName(uname);
-        System.out.print("Enter Password: ");
-        String pass = input.nextLine();
-        a.setPassWord(pass);
-        System.out.println("\nYou're now registered.\n_____________________________________");
-        this.Login(a);
-    }
-
-    @Override
-    public void choices() {
+    public void choices(Account a) {
         Pharmacist p = new Pharmacist();
         while (true) {
             System.out.println("\n--- CHOOSE OPERATION ---");
-            System.out.println("\n1. View Available Medicines\n2. Purchase Medicines\n3. View Purchased Medicines\n");
+            System.out.println("\n1. View Available Medicines\n2. Purchase Medicines\n3. View Purchased Medicines\n4. Logout");
             System.out.print("Select Transaction: ");
             String selection = input.nextLine();
             switch (selection) {
@@ -218,6 +198,15 @@ public class Adult extends Customer {
                 case "3":
                     this.viewPurchasedMedicines();
                     break;
+                case "4":
+                    System.out.print("\nAre you sure to Logout? yes/no : ");
+                    String logout = input.nextLine();
+                    if(logout.equals("yes")){
+                        this.Logout(a);
+                    }else if(logout.equals("no")){
+                        
+                    }
+                    break;
                 default:
                     System.out.println("Invalid Input!");
                     break;
@@ -225,4 +214,13 @@ public class Adult extends Customer {
         }
     }
 
+    @Override
+    public void Logout(Account a) {
+        super.Logout(a);
+    }
+
+    @Override
+    public void LoginAsSeniorCitizen(Account a) {
+
+    }
 }

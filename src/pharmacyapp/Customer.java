@@ -9,7 +9,8 @@ package pharmacyapp;
  *
  * @author 2ndyrGroupB
  */
-public abstract class Customer extends Person implements CustomerOperation {
+public abstract class Customer extends User implements CustomerOperation {
+    
     private Account account;
     private int money;
     private int age;
@@ -60,6 +61,7 @@ public abstract class Customer extends Person implements CustomerOperation {
     public String toString() {
         return "Customer{" + "account=" + account + ", money=" + money + ", age=" + age + '}';
     }
+    
     
  
     

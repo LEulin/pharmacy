@@ -14,6 +14,18 @@ public class SeniorCitizen extends Customer{
     public SeniorCitizen() {
     }
 
+    public SeniorCitizen(Account account, int money, int age) {
+        super(account, money, age);
+    }
+
+    public SeniorCitizen(Account account, int age) {
+        super(account, age);
+    }
+
+    public SeniorCitizen(int money) {
+        super(money);
+    }
+
     @Override
     public void viewAvailableMedicines(Pharmacy p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -50,7 +62,7 @@ public class SeniorCitizen extends Customer{
     }
 
     @Override
-    public void choices() {
+    public void choices(Account a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -60,19 +72,15 @@ public class SeniorCitizen extends Customer{
     }
 
     @Override
-    public void Register(Account a) {
+    public void LoginAsAdult(Account a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Login(Account a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void LoginAsSeniorCitizen(Account a) {
+        System.out.println("LE");
     }
-
-    @Override
-    public void Logout() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
+    
 
 }

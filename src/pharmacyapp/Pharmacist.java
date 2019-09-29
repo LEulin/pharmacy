@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author 2ndyrGroupB
  */
-public class Pharmacist extends Person implements PharmacistOperation {
+public class Pharmacist extends User implements PharmacistOperation {
 
     private String name;
     private Account account;
@@ -49,53 +49,97 @@ public class Pharmacist extends Person implements PharmacistOperation {
 
     @Override
     public boolean addMedicineForCough(MedicineForCough m) {
-        m.setId(Person.getMedicineForCough().size() + 1);
-        Person.getMedicineForCough().add(m);
+        m.setId(User.getMedicineForCough().size() + 1);
+        User.getMedicineForCough().add(m);
+        System.out.println(m.getBrandName() + " is added");
         return true;
     }
 
     @Override
     public boolean addMedicineForHeadache(MedicineForHeadache m) {
-        m.setId(Person.getMedicineForHeadache().size() + 1);
-        Person.getMedicineForHeadache().add(m);
+        m.setId(User.getMedicineForHeadache().size() + 1);
+        User.getMedicineForHeadache().add(m);
+        System.out.println(m.getBrandName() + " is added");
         return true;
     }
 
     @Override
     public boolean addMedicineForBodyPain(MedicineForBodyPain m) {
-        m.setId(Person.getMedicineForBodyPain().size() + 1);
-        Person.getMedicineForBodyPain().add(m);
+        m.setId(User.getMedicineForBodyPain().size() + 1);
+        User.getMedicineForBodyPain().add(m);
+        System.out.println(m.getBrandName() + " is added");
         return true;
     }
 
     @Override
     public boolean addMedicineForAllergies(MedicineForAllergies m) {
-        m.setId(Person.getMedicineForAllergies().size() + 1);
-        Person.getMedicineForAllergies().add(m);
+        m.setId(User.getMedicineForAllergies().size() + 1);
+        User.getMedicineForAllergies().add(m);
+        System.out.println(m.getBrandName() + " is added");
         return true;
     }
 
     @Override
     public boolean removeMedicineForCough(MedicineForCough m) {
-        Person.getMedicineForCough().remove(m);
+        System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
+        int rem = input.nextInt();
+        int q = m.getQuantity();
+        if(q == 1){
+            User.getMedicineForCough().remove(m);
+        }else if (q > 1){
+            int a = q - rem;
+            m.setQuantity(a);
+        }else if(q == rem){
+            User.getMedicineForCough().remove(m);
+        }
         return true;
     }
 
     @Override
     public boolean removeMedicineForHeadache(MedicineForHeadache m) {
-        Person.getMedicineForHeadache().remove(m);
+        System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
+        int rem = input.nextInt();
+        int q = m.getQuantity();
+        if(q == 1){
+            User.getMedicineForHeadache().remove(m);
+        }else if (q > 1){
+            int a = q - rem;
+            m.setQuantity(a);
+        }else if(q == rem){
+            User.getMedicineForHeadache().remove(m);
+        }
         return true;
     }
 
     @Override
     public boolean removeMedicineForBodyPain(MedicineForBodyPain m) {
-        Person.getMedicineForBodyPain().remove(m);
+        System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
+        int rem = input.nextInt();
+        int q = m.getQuantity();
+        if(q == 1){
+            User.getMedicineForBodyPain().remove(m);
+        }else if (q > 1){
+            int a = q - rem;
+            m.setQuantity(a);
+        }else if(q == rem){
+            User.getMedicineForBodyPain().remove(m);
+        }
         return true;
     }
 
     @Override
     public boolean removeMedicineForAllergies(MedicineForAllergies m) {
-        Person.getMedicineForAllergies().remove(m);
+        System.out.print("How many " + m.getBrandName() + " do you want to remove?: ");
+        int rem = input.nextInt();
+        int q = m.getQuantity();
+        if(q == 1){
+            User.getMedicineForAllergies().remove(m);
+        }else if (q > 1){
+            int a = q - rem;
+            m.setQuantity(a);
+        }else if(q == rem){
+            User.getMedicineForAllergies().remove(m);
+        }
         return true;
     }
 
@@ -105,8 +149,8 @@ public class Pharmacist extends Person implements PharmacistOperation {
         System.out.println("____________________________________________________________________________________________________________________");
         System.out.printf("  %-12s  |  %-11s   |   %-6s   |   %-8s   |  %-9s   |  %10s |  %12s", "Medicine ID", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date", "Quantity\n");
         System.out.println("____________________________________________________________________________________________________________________");
-        for (int i = 0; i < Person.getMedicineForCough().size(); i++) {
-            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", Person.getMedicineForCough().get(i).getId(), Person.getMedicineForCough().get(i).getBrandName(), Person.getMedicineForCough().get(i).getGenericName(), Person.getMedicineForCough().get(i).getPrice(), Person.getMedicineForCough().get(i).getType(), Person.getMedicineForCough().get(i).getExpirationDate(), Person.getMedicineForCough().get(i).getQuantity());
+        for (int i = 0; i < User.getMedicineForCough().size(); i++) {
+            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", User.getMedicineForCough().get(i).getId(), User.getMedicineForCough().get(i).getBrandName(), User.getMedicineForCough().get(i).getGenericName(), User.getMedicineForCough().get(i).getPrice(), User.getMedicineForCough().get(i).getType(), User.getMedicineForCough().get(i).getExpirationDate(), User.getMedicineForCough().get(i).getQuantity());
             System.out.println("____________________________________________________________________________________________________________________");
         }
     }
@@ -117,8 +161,8 @@ public class Pharmacist extends Person implements PharmacistOperation {
         System.out.println("____________________________________________________________________________________________________________________");
         System.out.printf("  %-12s  |  %-11s   |   %-6s   |   %-8s   |  %-9s   |  %10s |  %12s", "Medicine ID", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date", "Quantity\n");
         System.out.println("____________________________________________________________________________________________________________________");
-        for (int i = 0; i < Person.getMedicineForHeadache().size(); i++) {
-            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", Person.getMedicineForHeadache().get(i).getId(), Person.getMedicineForHeadache().get(i).getBrandName(), Person.getMedicineForHeadache().get(i).getGenericName(), Person.getMedicineForHeadache().get(i).getPrice(), Person.getMedicineForHeadache().get(i).getType(), Person.getMedicineForHeadache().get(i).getExpirationDate(), Person.getMedicineForHeadache().get(i).getQuantity());
+        for (int i = 0; i < User.getMedicineForHeadache().size(); i++) {
+            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", User.getMedicineForHeadache().get(i).getId(), User.getMedicineForHeadache().get(i).getBrandName(), User.getMedicineForHeadache().get(i).getGenericName(), User.getMedicineForHeadache().get(i).getPrice(), User.getMedicineForHeadache().get(i).getType(), User.getMedicineForHeadache().get(i).getExpirationDate(), User.getMedicineForHeadache().get(i).getQuantity());
             System.out.println("____________________________________________________________________________________________________________________");
         }
     }
@@ -129,8 +173,8 @@ public class Pharmacist extends Person implements PharmacistOperation {
         System.out.println("____________________________________________________________________________________________________________________");
         System.out.printf(" %-12s  |  %-11s   |   %-6s  |   %-8s  |  %-9s   |  %10s |  %12s", "Medicine ID", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date", "Quantity\n");
         System.out.println("____________________________________________________________________________________________________________________");
-        for (int i = 0; i < Person.getMedicineForBodyPain().size(); i++) {
-            System.out.printf(" %-12s   |  %-14s  |  %-14s  |  %-8d  |  %-12s  |  %-15s  | %10d\n", Person.getMedicineForBodyPain().get(i).getId(), Person.getMedicineForBodyPain().get(i).getBrandName(), Person.getMedicineForBodyPain().get(i).getGenericName(), Person.getMedicineForBodyPain().get(i).getPrice(), Person.getMedicineForBodyPain().get(i).getType(), Person.getMedicineForBodyPain().get(i).getExpirationDate(), Person.getMedicineForBodyPain().get(i).getQuantity());
+        for (int i = 0; i < User.getMedicineForBodyPain().size(); i++) {
+            System.out.printf(" %-12s   |  %-14s  |  %-14s  |  %-8d  |  %-12s  |  %-15s  | %10d\n", User.getMedicineForBodyPain().get(i).getId(), User.getMedicineForBodyPain().get(i).getBrandName(), User.getMedicineForBodyPain().get(i).getGenericName(), User.getMedicineForBodyPain().get(i).getPrice(), User.getMedicineForBodyPain().get(i).getType(), User.getMedicineForBodyPain().get(i).getExpirationDate(), User.getMedicineForBodyPain().get(i).getQuantity());
             System.out.println("____________________________________________________________________________________________________________________");
         }
     }
@@ -141,17 +185,17 @@ public class Pharmacist extends Person implements PharmacistOperation {
         System.out.println("____________________________________________________________________________________________________________________");
         System.out.printf("  %-12s  | %-11s   |   %-6s   |   %-8s   |  %-9s   |  %10s |  %12s", "Medicine ID", "Brand Name", "Generic Name", "Price", "Type", "Expiration Date", "Quantity\n");
         System.out.println("____________________________________________________________________________________________________________________");
-        for (int i = 0; i < Person.getMedicineForAllergies().size(); i++) {
-            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", Person.getMedicineForAllergies().get(i).getId(), Person.getMedicineForAllergies().get(i).getBrandName(), Person.getMedicineForAllergies().get(i).getGenericName(), Person.getMedicineForAllergies().get(i).getPrice(), Person.getMedicineForAllergies().get(i).getType(), Person.getMedicineForAllergies().get(i).getExpirationDate(), Person.getMedicineForAllergies().get(i).getQuantity());
+        for (int i = 0; i < User.getMedicineForAllergies().size(); i++) {
+            System.out.printf(" %-12s  | %-14s | %-14s | %-8d  | %-12s | %-15s | %10d\n", User.getMedicineForAllergies().get(i).getId(), User.getMedicineForAllergies().get(i).getBrandName(), User.getMedicineForAllergies().get(i).getGenericName(), User.getMedicineForAllergies().get(i).getPrice(), User.getMedicineForAllergies().get(i).getType(), User.getMedicineForAllergies().get(i).getExpirationDate(), User.getMedicineForAllergies().get(i).getQuantity());
             System.out.println("____________________________________________________________________________________________________________________");
         }
     }
 
     @Override
-    public void choices() {
+    public void choices(Account a) {
         while (true) {
             System.out.println("\n--- CHOOSE OPERATION ---");
-            System.out.println("\n1. Add Medicine\n2. Remove Medicine\n3. Display Medicines\n4. Inventory");
+            System.out.println("\n1. Add Medicine\n2. Remove Medicine\n3. Display Medicines\n4. Inventory\n5. View Customers\n6. Logout");
             System.out.print("\nSelect Operation: ");
             String operation = input.nextLine();
             switch (operation) {
@@ -264,9 +308,10 @@ public class Pharmacist extends Person implements PharmacistOperation {
                     String select = input.nextLine();
                     switch (select) {
                         case "1": {
-                            System.out.println("Enter the id of the medicine you want to remove.");
+                            this.displayAvailableMedicinesForCough();
+                            System.out.print("Enter the id of the medicine you want to remove: ");
                             int id = input.nextInt();
-                            for (MedicineForCough mfc : Person.getMedicineForCough()) {
+                            for (MedicineForCough mfc : User.getMedicineForCough()) {
                                 if (id == mfc.getId()) {
                                     this.removeMedicineForCough(mfc);
                                 }
@@ -276,7 +321,7 @@ public class Pharmacist extends Person implements PharmacistOperation {
                         case "2": {
                             System.out.println("Enter the id of the medicine you want to remove.");
                             int id = input.nextInt();
-                            for (MedicineForHeadache mfh : Person.getMedicineForHeadache()) {
+                            for (MedicineForHeadache mfh : User.getMedicineForHeadache()) {
                                 if (id == mfh.getId()) {
                                     this.removeMedicineForHeadache(mfh);
                                 }
@@ -286,7 +331,7 @@ public class Pharmacist extends Person implements PharmacistOperation {
                         case "3": {
                             System.out.println("Enter the id of the medicine you want to remove.");
                             int id = input.nextInt();
-                            for (MedicineForBodyPain mfb : Person.getMedicineForBodyPain()) {
+                            for (MedicineForBodyPain mfb : User.getMedicineForBodyPain()) {
                                 if (id == mfb.getId()) {
                                     this.removeMedicineForBodyPain(mfb);
                                 }
@@ -296,7 +341,7 @@ public class Pharmacist extends Person implements PharmacistOperation {
                         case "4": {
                             System.out.println("Enter the id of the medicine you want to remove.");
                             int id = input.nextInt();
-                            for (MedicineForAllergies mfa : Person.getMedicineForAllergies()) {
+                            for (MedicineForAllergies mfa : User.getMedicineForAllergies()) {
                                 if (id == mfa.getId()) {
                                     this.removeMedicineForAllergies(mfa);
                                 }
@@ -352,6 +397,19 @@ public class Pharmacist extends Person implements PharmacistOperation {
                             break;
                     }
                     break;
+                    
+                case "5":
+                    System.out.println(User.getCustomerList());
+                    break;
+                case "6":
+                    System.out.print("\nAre you sure to Logout? yes/no : ");
+                    String logout = input.nextLine();
+                    if(logout.equals("yes")){
+                        this.Logout(a);
+                    }else if(logout.equals("no")){
+                        
+                    }
+                    break;
                 default:
                     System.out.println("Invalid Input!");
                     break;
@@ -360,8 +418,40 @@ public class Pharmacist extends Person implements PharmacistOperation {
     }
 
     @Override
-    public void Login() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Login(Account a) {
+        boolean login = false;
+        while (login != true) {
+            int trial = 0;
+            while (trial != 3) {
+                System.out.print("\nEnter Username: ");
+                String username = input.nextLine();
+                System.out.print("Enter Password: ");
+                String password = input.nextLine();
+                Pharmacy rose = new Pharmacy("Rose");
+                if (username.equals(a.getUserName()) && password.equals(a.getPassWord())) {
+                    System.out.println("\n "+a.getFname()+" "+a.getLname()+ " you are now logged in.\n");
+                    System.out.println("You can now operate the pharmacy.\n");
+                    login = true;
+                    this.choices(a);
+                } else {
+                    System.out.println("\nIncorrect filled inputs.");
+                    trial++;
+                    break;
+                }
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void Logout(Account a) {
+        super.Logout(a);
+        
+    }
+
+    @Override
+    public void Register(Account a) {
+
     }
 
 }

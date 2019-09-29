@@ -21,6 +21,14 @@ public class Pharmacy {
     public Pharmacy(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
     public void displayAllAvailableMedicinesForCough(Pharmacist p){
         p.displayAvailableMedicinesForCough();
